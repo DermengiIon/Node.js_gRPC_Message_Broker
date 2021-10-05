@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package publish;
+
+message PublishReplay {
+    bool isSuccess = 1;
+}
+
+message PublishRequest {
+    string topic = 1;
+    string message = 2;
+}
+
+service Publish {
+    rpc PublishMessage(PublishRequest) returns (PublishReplay) {};
+}

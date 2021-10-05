@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package subscribe;
+
+message SubscribeReplay {
+    bool isSuccess = 1;
+}
+
+message SubscribeRequest {
+    string topic = 1;
+}
+
+service Subscriber {
+    rpc Subscribe(SubscribeRequest) returns (SubscribeReplay) {};
+}
